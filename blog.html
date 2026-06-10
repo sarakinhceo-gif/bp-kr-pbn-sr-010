@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-mono-chrome">
+    <meta name="description" content="망원 셔츠룸 가이드: 망원동 셔츠룸의 모든 정보를 친근하게 알려드려요. 합리적인 가격, 깔끔한 시스템, 직접 경험한 리뷰까지. 전화 010-6279-0862">
+    <meta name="keywords" content="망원 셔츠룸, 망원 셔츠룸 가이드, 망원동 셔츠룸, 셔츠룸 추천, 망원 유흥">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kr-pbn-sr-010.vercel.app/">
+    <meta property="og:title" content="망원 셔츠룸 가이드 - 친절한 정보와 리뷰">
+    <meta property="og:description" content="망원 셔츠룸, 망원동 셔츠룸의 모든 것. 가격, 시스템, 실제 후기까지 한눈에 확인하세요. 전화 010-6279-0862">
+    <title>망원 셔츠룸 가이드 - 블로그</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1d1d1f; background: #f5f5f7; -webkit-font-smoothing: antialiased; }
+        a { color: #0071e3; text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #005bbf; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        header { background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #1d1d1f; letter-spacing: -0.02em; }
+        .logo span { color: #86868b; font-weight: 400; }
+        nav { display: flex; gap: 24px; align-items: center; }
+        nav a { font-size: 0.9rem; color: #1d1d1f; font-weight: 500; padding: 8px 12px; border-radius: 8px; transition: background 0.2s; }
+        nav a:hover { background: rgba(0,0,0,0.04); color: #0071e3; }
+        .nav-cta { background: #0071e3; color: white !important; padding: 8px 20px; border-radius: 20px; font-weight: 600; }
+        .nav-cta:hover { background: #005bbf; color: white !important; }
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hamburger-menu { display: block; cursor: pointer; width: 28px; height: 20px; position: relative; }
+            .hamburger-menu span { display: block; width: 100%; height: 2px; background: #1d1d1f; margin: 5px 0; border-radius: 2px; }
+            .tel-link { display: inline-flex; align-items: center; gap: 6px; background: #0071e3; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+            .tel-link:hover { background: #005bbf; color: white; }
+        }
+        @media (min-width: 769px) {
+            .hamburger-menu { display: none; }
+            .tel-link { display: none; }
+        }
+        .blog-hero { padding: 80px 0 40px; text-align: center; }
+        .blog-hero h1 { font-size: 2.8rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1.2; }
+        .blog-hero p { font-size: 1.1rem; color: #86868b; max-width: 600px; margin: 0 auto; }
+        .blog-post { background: white; border-radius: 20px; padding: 48px; margin: 40px auto; max-width: 800px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+        .blog-post h2 { font-size: 1.8rem; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.02em; }
+        .blog-post h2:first-child { margin-top: 0; }
+        .blog-post h3 { font-size: 1.3rem; font-weight: 600; margin: 32px 0 12px; color: #1d1d1f; }
+        .blog-post p { margin-bottom: 20px; color: #424245; font-size: 1.05rem; }
+        .blog-post .highlight { background: #f5f5f7; border-radius: 12px; padding: 24px; margin: 24px 0; border-left: 4px solid #0071e3; }
+        .blog-post .highlight p:last-child { margin-bottom: 0; }
+        .blog-post ul { margin: 16px 0 24px; padding-left: 24px; }
+        .blog-post ul li { margin-bottom: 10px; color: #424245; font-size: 1.05rem; }
+        .blog-post .cta-box { background: linear-gradient(135deg, #0071e3, #005bbf); color: white; border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0; }
+        .blog-post .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 16px; }
+        .blog-post .cta-box a { display: inline-block; background: white; color: #0071e3; padding: 12px 32px; border-radius: 24px; font-weight: 600; font-size: 1.1rem; }
+        .blog-post .cta-box a:hover { background: #f0f0f0; }
+        .blog-meta { font-size: 0.9rem; color: #86868b; margin-bottom: 24px; display: flex; gap: 16px; }
+        .blog-meta span { display: flex; align-items: center; gap: 4px; }
+        footer { text-align: center; padding: 48px 24px; color: #86868b; font-size: 0.85rem; border-top: 1px solid rgba(0,0,0,0.06); margin-top: 80px; }
+        footer a { color: #86868b; }
+        footer a:hover { color: #1d1d1f; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo">망원 셔츠룸<span> 가이드</span></div>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/blog">블로그</a>
+                <a href="/review">리뷰</a>
+                <a href="/faq">FAQ</a>
+                <a href="tel:010-6279-0862" class="nav-cta">전화 문의</a>
+            </nav>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="tel:010-6279-0862" class="tel-link">📞 전화하기</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="blog-hero">
+            <h1>망원 셔츠룸 블로그</h1>
+            <p>직접 경험하고 느낀 솔직한 이야기, 가끔은 웃긴 에피소드도 함께</p>
+        </div>
+
+        <article class="blog-post">
+            <div class="blog-meta">
+                <span>📅 2025.03.15</span>
+                <span>✍️ 망원 셔츠룸 가이드</span>
+                <span>📖 5분 읽기</span>
+            </div>
+
+            <h2>망원 셔츠룸, 처음 가본 썰 푼다</h2>
+
+            <p>사실 나도 처음엔 좀 긴장됐어. "셔츠룸" 하면 뭔가 어렵고, 비싸고, 눈치 보이는 그런 분위기일 줄 알았거든. 근데 망원동에 있는 셔츠룸은 완전 달랐어. 형이랑 같이 갔는데, "야 여기 괜찮다" 소리 절로 나오더라.</p>
+
+            <p>일단 입구부터 깔끔해. 간판도 세련됐고, 들어가자마자 편안한 조명이 반겨줘. 리셉션에 계신 분이 친절하게 시스템 설명해주는데, 부담스럽지 않게 딱 필요한 말만 해줘서 좋았어. "첫 손님이세요? 천천히 둘러보세요" 이 말 한마디에 긴장 풀렸지 뭐야.</p>
+
+            <div class="highlight">
+                <p><strong>💡 첫 방문 꿀팁:</strong> 전화로 미리 예절이나 시스템 물어보면 완전 편해. 번호는 010-6279-0862. 나도 처음에 전화해서 이것저것 물어봤는데, 되게 친절하게 알려주더라. 부끄러워하지 말고 편하게 물어봐!</p>
+            </div>
+
+            <h3>가격? 생각보다 합리적이야</h3>
+            <p>솔직히 부담되는 건 가격이잖아. 근데 망원 셔츠룸은 진짜 합리적이야. 내가 다른 동네 셔츠룸도 몇 군데 가봤는데, 여기는 서비스 대비 가격이 착한 편이야. 게다가 기본 안주도 푸짐하게 나오고, 음료도 종류가 다양해. 술 안 마셔도 되는 점이 제일 맘에 들었어. 나는 운전해야 하니까 콜라 마셨는데, 전혀 어색하지 않았거든.</p>
+
+            <h3>시스템이 깔끔해</h3>
+            <p>가장 놀랐던 건 시스템이야. 시간 관리도 정확하고, 직원분들도 다 매너 있게 대해줘. 중간중간 상태 확인해주는 것도 좋았고, 필요한 거 있으면 바로바로 처리해줘. 예전에 다른 데 갔을 때는 "이거 언제 되나" 기다린 적도 있었는데, 여기는 그런 게 전혀 없어.</p>
+
+            <p>그리고 결정적으로 <strong>아가씨들 센스가 장난 아냐</strong>. 분위기 잘 읽고, 말도 잘 통하고, 술자리 분위기를 확 살려줘. 나는 원래 낯 가리는 편인데, 얘기하다 보면 시간 가는 줄 몰라. 형이 "야 너 오늘 왜 이렇게 말이 많냐"고 놀릴 정도였으니까.</p>
+
+            <div class="cta-box">
+                <p>📞 지금 바로 전화해서 예약 상황 확인해보세요!</p>
+                <a href="tel:010-6279-0862">010-6279-0862</a>
+                <p style="margin-top:12px; font-size:0.9rem;">"망원 셔츠룸 블로그 보고 전화했어요" 하면 더 친절하게 받아줄 거야</p>
+            </div>
+
+            <h3>마무리: 한 번 가보길 추천해</h3>
+            <p>솔직히 유흥업소 자체가 처음이면 망설여지잖아. 나도 그랬고. 근데 망원 셔츠룸은 진짜 입문자한테 딱이야. 부담 없고, 가격도 합리적이고, 시스템도 깔끔해. 게다가 직원들이 다 친절해서 "내가 여기서 무슨 실수하면 어쩌지" 하는 걱정 안 해도 돼.</p>
+
+            <p>한 번 가보면 "아, 이거였구나" 할 걸? 나도 이제는 형이랑 가끔 생각날 때마다 들르고 있어. 다음엔 다른 친구들도 데려가려고. 망원 셔츠룸, 강추야.</p>
+
+            <ul>
+                <li><strong>주소:</strong> 망원동 (자세한 위치는 전화로 문의!)</li>
+                <li><strong>전화:</strong> 010-6279-0862</li>
+                <li><strong>운영:</strong> 매일 (시간은 전화로 확인하는 게 가장 정확해)</li>
+            </ul>
+
+            <p>혹시 더 궁금한 거 있으면 댓글 남겨줘. 내가 아는 선에서 다 알려줄게. 아니면 직접 전화하는 게 가장 빠르긴 해. 010-6279-0862. 부담 갖지 말고 편하게 물어봐!</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>망원 셔츠룸 가이드 | 문의: 010-6279-0862</p>
+        <p>본 사이트는 정보 제공을 목적으로 하며, 실제 이용 시 개인의 판단과 책임이 필요합니다.</p>
+        <p>© 2025 <a href="https://kr-pbn-sr-010.vercel.app/">망원 셔츠룸 가이드</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
