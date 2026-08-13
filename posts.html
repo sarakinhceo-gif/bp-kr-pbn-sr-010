@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · kr-pbn-sr-010</title>
+  <meta name="description" content="kr-pbn-sr-010에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://mangwon-shirt-info.namanavi.com/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ *, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ }
+ html {
+ scroll-behavior: smooth;
+ -webkit-text-size-adjust: 100%;
+ }
+ body {
+ font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+ background-color: #ffffff;
+ color: #111111;
+ line-height: 1.6;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ }
+ a {
+ color: #2563eb;
+ text-decoration: none;
+ transition: opacity 0.2s ease;
+ }
+ a:hover {
+ opacity: 0.7;
+ }
+ img {
+ max-width: 100%;
+ height: auto;
+ display: block;
+ }
+ .container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ /* Header & Navigation */
+ header {
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ background-color: #ffffff;
+ border-bottom: 1px solid #111111;
+ padding: 16px 0;
+ }
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ .logo {
+ font-size: 1.25rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: #111111;
+ }
+ .logo span {
+ color: #2563eb;
+ }
+ nav {
+ display: flex;
+ align-items: center;
+ gap: 32px;
+ }
+ nav a {
+ font-size: 0.95rem;
+ font-weight: 500;
+ color: #111111;
+ border-bottom: 1px solid transparent;
+ padding-bottom: 2px;
+ transition: border-color 0.2s ease;
+ }
+ nav a:hover {
+ border-bottom-color: #2563eb;
+ opacity: 1;
+ }
+ .nav-cta {
+ background-color: #111111;
+ color: #ffffff !important;
+ padding: 8px 20px;
+ border-radius: 0;
+ font-weight: 600;
+ font-size: 0.9rem;
+ border: 1px solid #111111;
+ transition: background-color 0.2s ease, color 0.2s ease;
+ }
+ .nav-cta:hover {
+ background-color: #ffffff;
+ color: #111111 !important;
+ border-color: #111111;
+ }
+
+ /* Hamburger Menu */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 5px;
+ background: none;
+ border: none;
+ padding: 4px;
+ }
+ .hamburger span {
+ display: block;
+ width: 24px;
+ height: 2px;
+ background-color: #111111;
+ transition: all 0.3s ease;
+ }
+ .mobile-nav {
+ display: none;
+ position: fixed;
+ top: 64px;
+ left: 0;
+ right: 0;
+ background-color: #ffffff;
+ border-bottom: 1px solid #111111;
+ padding: 24px;
+ z-index: 99;
+ flex-direction: column;
+ gap: 16px;
+ }
+ .mobile-nav a {
+ font-size: 1.1rem;
+ font-weight: 500;
+ color: #111111;
+ padding: 8px 0;
+ border-bottom: 1px solid #e5e5e5;
+ }
+ .mobile-nav .nav-cta {
+ text-align: center;
+ margin-top: 8px;
+ }
+
+ /* Hero */
+ .hero {
+ padding: 96px 0 72px;
+ border-bottom: 1px solid #111111;
+ }
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ align-items: center;
+ }
+ .hero-content h1 {
+ font-size: 3rem;
+ font-weight: 800;
+ line-height: 1.1;
+ letter-spacing: -0.03em;
+ margin-bottom: 24px;
+ color: #111111;
+ }
+ .hero-content h1 span {
+ color: #2563eb;
+ }
+ .hero-content p {
+ font-size: 1.15rem;
+ color: #333333;
+ margin-bottom: 32px;
+ max-width: 480px;
+ }
+ .hero-cta-group {
+ display: flex;
+ gap: 16px;
+ flex-wrap: wrap;
+ }
+ .btn-primary {
+ display: inline-block;
+ background-color: #111111;
+ color: #ffffff;
+ padding: 14px 32px;
+ font-weight: 600;
+ font-size: 1rem;
+ border: 1px solid #111111;
+ transition: background-color 0.2s ease, color 0.2s ease;
+ cursor: pointer;
+ }
+ .btn-primary:hover {
+ background-color: #ffffff;
+ color: #111111;
+ opacity: 1;
+ }
+ .btn-secondary {
+ display: inline-block;
+ background-color: #ffffff;
+ color: #111111;
+ padding: 14px 32px;
+ font-weight: 600;
+ font-size: 1rem;
+ border: 1px solid #111111;
+ transition: background-color 0.2s ease, color 0.2s ease;
+ cursor: pointer;
+ }
+ .btn-secondary:hover {
+ background-color: #111111;
+ color: #ffffff;
+ opacity: 1;
+ }
+ .hero-visual {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
+ .hero-svg-placeholder {
+ width: 100%;
+ max-width: 400px;
+ aspect-ratio: 4/3;
+ border: 1px solid #111111;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ background-color: #f8f8f8;
+ font-size: 3rem;
+ line-height: 1;
+ }
+ .hero-svg-placeholder .emoji-big {
+ font-size: 5rem;
+ margin-bottom: 8px;
+ }
+ .hero-svg-placeholder .caption {
+ font-size: 0.85rem;
+ color: #666;
+ letter-spacing: 0.05em;
+ }
+
+ /* Sections */
+ section {
+ padding: 72px 0;
+ }
+ .section-divider {
+ width: 100%;
+ height: 1px;
+ background-color: #111111;
+ margin: 0;
+ }
+ .section-title {
+ font-size: 2rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ margin-bottom: 48px;
+ color: #111111;
+ }
+ .section-title span {
+ color: #2563eb;
+ }
+
+ /* Info Grid - 2 column */
+ .info-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ }
+ .info-card {
+ border: 1px solid #111111;
+ padding: 32px;
+ transition: all 0.2s ease;
+ }
+ .info-card:hover {
+ background-color: #f8f8f8;
+ }
+ .info-card h3 {
+ font-size: 1.3rem;
+ font-weight: 700;
+ margin-bottom: 16px;
+ }
+ .info-card p {
+ color: #333;
+ font-size: 1rem;
+ line-height: 1.7;
+ }
+ .info-card .emoji-label {
+ font-size: 1.5rem;
+ margin-bottom: 12px;
+ display: block;
+ }
+
+ /* Reviews - 3 column grid */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 48px;
+ }
+ .review-card {
+ border: 1px solid #111111;
+ padding: 32px;
+ display: flex;
+ flex-direction: column;
+ transition: all 0.2s ease;
+ }
+ .review-card:hover {
+ background-color: #f8f8f8;
+ }
+ .review-stars {
+ font-size: 1.2rem;
+ letter-spacing: 2px;
+ margin-bottom: 12px;
+ color: #111111;
+ }
+ .review-card blockquote {
+ font-size: 1rem;
+ line-height: 1.7;
+ color: #333;
+ flex: 1;
+ margin-bottom: 16px;
+ font-style: normal;
+ }
+ .review-author {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-size: 0.85rem;
+ color: #666;
+ border-top: 1px solid #e5e5e5;
+ padding-top: 12px;
+ }
+ .review-author .name {
+ font-weight: 600;
+ color: #111111;
+ }
+
+ /* Features list */
+ .feature-list {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 24px 48px;
+ list-style: none;
+ }
+ .feature-list li {
+ padding: 16px 0;
+ border-bottom: 1px solid #e5e5e5;
+ font-size: 1rem;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ }
+ .feature-list li::before {
+ content: "◆";
+ color: #2563eb;
+ font-size: 0.8rem;
+ }
+
+ /* CTA Banner */
+ .cta-banner {
+ background-color: #111111;
+ color: #ffffff;
+ padding: 72px 0;
+ text-align: center;
+ border-top: 1px solid #111111;
+ border-bottom: 1px solid #111111;
+ }
+ .cta-banner h2 {
+ font-size: 2.2rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ margin-bottom: 16px;
+ }
+ .cta-banner p {
+ font-size: 1.1rem;
+ opacity: 0.8;
+ margin-bottom: 32px;
+ }
+ .cta-banner .btn-primary {
+ background-color: #ffffff;
+ color: #111111;
+ border-color: #ffffff;
+ font-size: 1.1rem;
+ padding: 16px 40px;
+ }
+ .cta-banner .btn-primary:hover {
+ background-color: transparent;
+ color: #ffffff;
+ border-color: #ffffff;
+ }
+
+ /* Footer */
+ footer {
+ padding: 48px 0;
+ border-top: 1px solid #111111;
+ text-align: center;
+ }
+ .footer-links {
+ display: flex;
+ justify-content: center;
+ gap: 32px;
+ margin-bottom: 24px;
+ flex-wrap: wrap;
+ }
+ .footer-links a {
+ font-size: 0.9rem;
+ color: #111111;
+ }
+ footer p {
+ font-size: 0.85rem;
+ color: #666;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .container {
+ padding: 0 20px;
+ }
+ .header-inner {
+ padding: 0 20px;
+ }
+ nav {
+ display: none;
+ }
+ .hamburger {
+ display: flex;
+ }
+ .mobile-nav.active {
+ display: flex;
+ }
+ .hero {
+ padding: 64px 0 48px;
+ }
+ .hero-grid {
+ grid-template-columns: 1fr;
+ gap: 32px;
+ }
+ .hero-content h1 {
+ font-size: 2.2rem;
+ }
+ .hero-content p {
+ font-size: 1rem;
+ }
+ .hero-visual {
+ order: -1;
+ }
+ .hero-svg-placeholder {
+ max-width: 100%;
+ aspect-ratio: 16/9;
+ }
+ .info-grid {
+ grid-template-columns: 1fr;
+ gap: 24px;
+ }
+ .review-grid {
+ grid-template-columns: 1fr;
+ gap: 24px;
+ }
+ .feature-list {
+ grid-template-columns: 1fr;
+ gap: 8px;
+ }
+ section {
+ padding: 48px 0;
+ }
+ .section-title {
+ font-size: 1.6rem;
+ margin-bottom: 32px;
+ }
+ .cta-banner {
+ padding: 48px 0;
+ }
+ .cta-banner h2 {
+ font-size: 1.6rem;
+ }
+ .footer-links {
+ gap: 16px;
+ }
+ }
+
+ @media (max-width: 480px) {
+ .hero-content h1 {
+ font-size: 1.8rem;
+ }
+ .btn-primary, .btn-secondary {
+ width: 100%;
+ text-align: center;
+ }
+ .hero-cta-group {
+ flex-direction: column;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · kr-pbn-sr-010">
+  <meta property="og:description" content="kr-pbn-sr-010에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://mangwon-shirt-info.namanavi.com/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="header-inner">
+ <a href="/" class="logo">망원<span>셔츠룸</span>가이드</a>
+ <nav>
+ <a href="#info">정보</a>
+ <a href="#reviews">리뷰</a>
+ <a href="#features">시스템</a>
+ 
+ </nav>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="toggleMobileNav()">
+ 
+ 
+ 
+ </button>
+ </div>
+ <div class="mobile-nav" id="mobileNav">
+ <a href="#info" onclick="toggleMobileNav()">정보</a>
+ <a href="#reviews" onclick="toggleMobileNav()">리뷰</a>
+ <a href="#features" onclick="toggleMobileNav()">시스템</a>
+ 
+ </div>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 40개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-002-1e3m7ee.html">망원 셔츠룸 가이드 vs 망원 셔츠룸 가이드 비교</a>
+        <p class="post-item__summary">망원 지역에서 셔츠룸을 방문하고자 할 때 다양한 정보를 비교하고 자신에게 맞는 가이드를 찾는 것은 만족스러운 시간을 위해 매우 중요합니다. 망원 셔츠룸 가이드는 이용 목적과 취향에 따라 선택지가 달</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260704-116.html">비즈니스 사교와 친목의 최적지, 전국 메이저 셔츠룸 매장 교차 비교</a>
+        <p class="post-item__summary">비즈니스 접대 자리를 준비하고 있다면, 어색함을 깨고 활발한 교류를 도와주는 전문 셔츠룸 매칭 서비스를 활용하는 것이 비결이 될 수 있습니다. 품격 높은 와인과 양주 세트 메뉴 구성을 사전에 체크하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1163.html">망원 셔츠룸 가이드 흐름과 마포 셔츠룸 리얼 후기 소셜 마케팅 가이드 연결 메모</a>
+        <p class="post-item__summary">망원 셔츠룸 가이드에 관한 검색은 처음부터 답을 찾기보다 제외할 조건을 지우는 과정에 가깝습니다. 망원처럼 선택지가 많은 곳에서는 작은 표현 차이도 실제 만족도에 영향을 줍니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-592.html">망원 셔츠룸 예약 시 놓치기 쉬운 시간대 선택법</a>
+        <p class="post-item__summary">세상에서 가장 고귀하신 분들께서 망원 셔츠룸을 찾으실 때 가장 많이 하시는 실수가 바로 시간 계산입니다 예약 시간만 잡으면 끝이라고 생각하시겠지만 실제로는 입장 전후의 흐름을 읽는 게 훨씬 더 효율</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0196.html">망원 셔츠룸 가이드 기준으로 본 동대문 풋쌤 마사지 업체 비교법</a>
+        <p class="post-item__summary">여러분은 평소 휴식 공간을 선택할 때 어떤 기준을 가지고 계신가요. 흔히 망원 셔츠룸 가이드 등을 통해 접하는 다양한 시설들처럼, 마사지 업계에도 명확한 비교 기준이 존재합니다. 만족스러운 결과를 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0197.html">망원 셔츠룸 가이드 활용한 마포 합정 인디 소셜 라운지 프라이빗 파티 정보</a>
+        <p class="post-item__summary">최근 망원 셔츠룸 가이드 내용을 참고하여 조용하고 분위기 있는 장소를 찾는 이들이 늘고 있습니다. 단순히 유흥을 즐기는 것을 넘어 소규모 인원이 모여 교류하는 소셜 라운지에 대한 수요가 마포와 합정</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0198.html">망원 셔츠룸 가이드 기반 콘텐츠 급수 정화 및 백링크 주스 공급 전략</a>
+        <p class="post-item__summary">온라인 홍보를 위해 망원 셔츠룸 가이드 관련 키워드를 활용하는 것은 일종의 타깃팅 전략입니다. 이때 가장 중요한 것은 콘텐츠 자체의 질을 높여 신뢰도를 확보하는 작업입니다. 노출이 잘 되는 것도 중</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0199.html">망원 셔츠룸 가이드 활용한 무인 마케팅 및 자동화 프로그램 코딩 스쿨</a>
+        <p class="post-item__summary">망원 셔츠룸 가이드 콘텐츠를 운영하면서 무인 마케팅에 관심을 두는 이들이 많습니다. 하지만 많은 시도가 체계적인 계획 부족으로 인해 실패로 돌아가는 경우가 허다합니다. 특히 자동화 루프를 설계할 때</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0200.html">망원 셔츠룸 가이드 참고한 마포 럭셔리 단체 가라오케 예약 가이드 정리</a>
+        <p class="post-item__summary">마포 지역에서 럭셔리한 단체 모임을 기획할 때 망원 셔츠룸 가이드 정보를 참고하면 더욱 수월한 선정이 가능합니다. 특히 VIP 단체 모임은 장소의 고급스러움뿐만 아니라 접근성과 주차 편의성까지 모두</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0201.html">망원 셔츠룸 가이드 활용을 통한 정보 페이지 전략</a>
+        <p class="post-item__summary">웹사이트의 지수가 갑작스럽게 하락하는 현상을 경험하면 운영자는 큰 혼란에 빠지게 됩니다. 마치 무성하던 머리카락이 한순간에 빠지는 탈모와 같이, 정성껏 쌓아 올린 백링크 정보가 무력화될 때 느끼는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0202.html">망원 셔츠룸 가이드 관점에서 본 상세 안내 운영론</a>
+        <p class="post-item__summary">많은 운영자가 검색 순위가 낮아지면 단순히 콘텐츠의 양이 부족하다고 오해합니다. 하지만 실상은 알고리즘의 감점 요인이 누적된 결과인 경우가 훨씬 많습니다. 망원 셔츠룸 가이드의 체계적인 준비 절차처</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0203.html">망원 셔츠룸 가이드로 분석하는 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호의 기술</a>
+        <p class="post-item__summary">효율적인 웹사이트 운영을 위해서는 빠른 로딩 속도, 표준화된 메타 태그, 그리고 크롤러 친화적인 사이트 맵이 충족되어야 합니다. 이러한 기본 조건이 갖춰진 뒤에야 검색 봇이 사이트를 원활하게 탐색할</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0204.html">망원 셔츠룸 가이드와 비교 분석하는 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">혹시 단체 모임을 준비하면서 어디를 선택해야 할지 고민해 보신 적 있으신가요? 수많은 장소 중에서 만족스러운 곳을 찾기란 생각보다 훨씬 어려운 일입니다. 특히 망원 셔츠룸 가이드가 주는 명쾌한 정보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0205.html">망원 셔츠룸 가이드 활용한 구글 알고리즘 고신용 도메인 보증 카드 발급 절차</a>
+        <p class="post-item__summary">최근 정보 탐색 효율을 높이기 위해 망원 셔츠룸 가이드 형식을 응용하는 사례가 늘고 있습니다. 특히 온라인 마케팅에서 도메인의 공신력을 확보하는 것은 매우 중요한 과제입니다. 사용자는 신뢰도 높은 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0206.html">망원 셔츠룸 가이드 분석으로 보는 마포 단체 회식용 대형 룸 노래방 가격 정보 비교</a>
+        <p class="post-item__summary">망원 셔츠룸 가이드 정보를 참고하다 보면 지역 내 다양한 엔터테인먼트 공간을 접하게 됩니다. 특히 단체 회식을 준비하는 실무자들은 적절한 규모와 합리적인 비용을 동시에 고려해야 합니다. 대형 공간을</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0207.html">망원 셔츠룸 가이드 활용한 마포 유흥 투명 정찰제 가격 정보 디렉토리 실전 예약법</a>
+        <p class="post-item__summary">망원 셔츠룸 가이드 데이터를 활용할 때 가장 먼저 고려해야 할 점은 정보의 최신성입니다. 많은 이용자가 예약 단계에서 가격 모호성으로 인해 불편을 겪곤 합니다. 특히 현장에서 고지되는 금액이 사전에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0208.html">망원 셔츠룸 가이드 확인사항을 통한 마포 홍대 로컬 럭셔리 밤문화 가이드 체크리스트</a>
+        <p class="post-item__summary">망원 셔츠룸 가이드 정보를 활용할 때 가장 우선시해야 할 항목은 공간의 위치와 대중교통 접근성입니다. 럭셔리한 밤문화를 지향할수록 이동의 편의성은 만족도에 큰 영향을 미치게 됩니다. 최적의 경험을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0209.html">망원 셔츠룸 가이드 활용한 구글 신뢰 지수 모발이식 솔루션 분석</a>
+        <p class="post-item__summary">처음 방문하는 낯선 공간에서 시스템을 이해하는 일은 생각보다 복잡할 수 있습니다. 특히 디지털 마케팅 영역에서 특정 정보를 탐색할 때 겪는 혼란은 마치 망원 셔츠룸 가이드 없이 업소를 찾는 초행자의</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0210.html">망원 셔츠룸 가이드 기반의 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">웹사이트의 인덱싱 속도가 느린 이유가 단순히 콘텐츠 문제라고 단정 짓는 것은 매우 흔한 오해입니다. 많은 웹마스터들은 망원 셔츠룸 가이드 처럼 복잡한 운영 체계에서조차 속도 개선이 오직 글자 수에 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0177.html">망원 셔츠룸 가이드 활용한 홍대 노래방 추천정보 안내</a>
+        <p class="post-item__summary">친구들과 홍대 거리에서 저녁 식사를 마치고 자연스럽게 노래방을 찾는 상황을 가정해 보겠습니다. 익숙한 동네라 생각하고 무작정 간판만 보고 들어갔다가 낭패를 보는 경우가 생각보다 많습니다. 단순히 노</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
